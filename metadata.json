@@ -1,0 +1,7 @@
+{
+  "name": "Remix: Remix: Velo Study",
+  "description": "A sophisticated micro-learning app for commuters, featuring AI-driven scheduling, hands-free audio lessons, and high-contrast thumb-first design.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

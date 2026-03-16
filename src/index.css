@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-velo-black: #050505;
+  --color-velo-white: #F5F5F5;
+  --color-velo-accent: #00FF00; /* Neon Green for high contrast */
+  --color-velo-muted: #1A1A1A;
+}
+
+/* Light Theme Overrides */
+:root.light-theme {
+  --color-velo-black: #F5F5F5;
+  --color-velo-white: #050505;
+  --color-velo-muted: #FFFFFF;
+  --color-velo-accent: #008000;
+}
+
+.light-theme .glass-card {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #050505;
+}
+
+.light-theme .text-white\/40 { color: rgba(0, 0, 0, 0.4); }
+.light-theme .text-white\/60 { color: rgba(0, 0, 0, 0.6); }
+.light-theme .text-white\/80 { color: rgba(0, 0, 0, 0.8); }
+.light-theme .bg-white\/5 { background: rgba(0, 0, 0, 0.05); }
+.light-theme .border-white\/10 { border-color: rgba(0, 0, 0, 0.1); }
+.light-theme .bg-velo-muted\/50 { background: rgba(255, 255, 255, 0.5); }
+.light-theme .bg-velo-muted\/30 { background: rgba(255, 255, 255, 0.3); }
+.light-theme .bg-velo-black\/80 { background: rgba(245, 245, 245, 0.8); }
+
+@layer base {
+  body {
+    @apply bg-velo-black text-velo-white font-sans antialiased overflow-hidden;
+  }
+}
+
+.thumb-zone {
+  @apply fixed bottom-0 left-0 right-0 p-6 pb-10 bg-gradient-to-t from-velo-black via-velo-black/90 to-transparent pointer-events-none;
+}
+
+.thumb-zone > * {
+  @apply pointer-events-auto;
+}
+
+.glass-card {
+  @apply bg-velo-muted/50 backdrop-blur-xl border border-white/10 rounded-3xl p-6;
+}
+
+.btn-primary {
+  @apply h-14 px-8 rounded-2xl bg-velo-accent text-velo-black font-display font-bold text-lg 
+         active:scale-95 transition-transform flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply h-14 px-8 rounded-2xl bg-velo-muted text-velo-white font-display font-bold text-lg 
+         border border-white/10 active:scale-95 transition-transform flex items-center justify-center gap-2;
+}
+
+.transit-text {
+  @apply font-display font-extrabold tracking-tight uppercase;
+}
+
